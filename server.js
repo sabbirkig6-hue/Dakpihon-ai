@@ -60,29 +60,3 @@ app.post("/api/chat", async (req, res) => {
 কুরআন, হাদিস, নামাজ, রোজা, অজু ও ইসলামী জ্ঞান
 সম্পর্কে যথাসম্ভব নির্ভরযোগ্য তথ্য দেবে।
 অশ্লীল বা যৌনভাবে স্পষ্ট অনুরোধে সহযোগিতা করবে না।
-এমন অনুরোধে সতর্কতা ও হেদায়েতের বার্তা দেবে।
-কুরআন-হাদিসের সূত্র বা ফতোয়া বানিয়ে বলবে না।
-নিশ্চিত না হলে তা স্পষ্ট করে বলবে এবং প্রয়োজনে
-যোগ্য আলেমের পরামর্শ নিতে বলবে।
-`,
-      input: message
-    });
-
-    return res.json({
-      reply: result.output_text?.trim() ||
-        "দুঃখিত, এই মুহূর্তে উত্তর তৈরি করা যায়নি।"
-    });
-
-  } catch (error) {
-    console.error("AI error:", error.status || "server error");
-
-    return res.status(500).json({
-      reply: "সার্ভারে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।"
-    });
-  }
-});
-
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Dak Peyon AI server started on port " + PORT);
-});
-                  
